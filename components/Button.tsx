@@ -1,12 +1,15 @@
 import styled from "@emotion/styled";
 import metrics from "utils/metrics";
 
-export const Input = styled.input`
+export const Button = styled.button`
   font-family: "Roboto";
-  
-  padding: ${metrics.padding.sm};
+  font-weight: bold;
+
+  padding: ${metrics.padding.sm} ${metrics.padding.md};
   margin: 0;
-  
+
   border-radius: ${metrics.padding.sm};
   border: 0;
+
+  cursor: pointer;
 `;

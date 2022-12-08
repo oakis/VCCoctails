@@ -2,9 +2,7 @@ import { Spacer } from "components/Spacer";
 import { Text } from "components/Text";
 import { Title } from "components/Title";
 import { Container } from "components/Container";
-import { useRouter } from "next/router";
 import React, { useState, useContext } from "react";
-import { SearchContext } from "contexts/SearchContext";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
 interface IDetailsView {
