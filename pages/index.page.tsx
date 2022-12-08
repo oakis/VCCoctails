@@ -23,6 +23,12 @@ const Home = (props: IHomeView) => {
     setSearch(event.target.value);
   };
 
+  const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      onSearch();
+    }
+  };
+
   const onSearch = () => {
     searchCocktail(search);
   };
@@ -44,7 +50,7 @@ const Home = (props: IHomeView) => {
             <HSpacer size="lg" />
             <Column>
               <Row>
-                <Input onChange={onChange} />
+                <Input onChange={onChange} onKeyDown={onKeyDown} />
                 <HSpacer size="sm" />
                 <Button onClick={onSearch}>Sök</Button>
               </Row>
