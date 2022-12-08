@@ -4,6 +4,7 @@ import { Title } from "components/Title";
 import { Container } from "components/Container";
 import React, { useState, useContext } from "react";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import colors from "utils/colors";
 
 interface IDetailsView {
   details: IDrink;
@@ -48,11 +49,12 @@ export const getServerSideProps: GetServerSideProps = async (
 };
 
 const Details = (props: IDetailsView) => {
+  console.log(props.details);
   return (
     <Container>
-      <Title>Details</Title>
+      <Title style={{color: colors.primary.light}}>{props.details.strDrink} - {props.details.strCategory}</Title>
       <Spacer size="sm" />
-      <Text>{props.details.strDrink}</Text>
+      <Text>{props.details.strInstructions}</Text>
     </Container>
   );
 };

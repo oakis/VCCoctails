@@ -7,8 +7,9 @@ import React, { useState, useContext } from "react";
 import { Container } from "components/Container";
 import { SearchContext } from "contexts/SearchContext";
 import { Button } from "components/Button";
-import { Background, Column, LightText, Row } from "./style";
+import { Background, Column, Grid, Item, LightText, Row } from "./style";
 import { HSpacer } from "components/HSpacer";
+import { Image } from "components/Image";
 
 interface IHomeView {}
 
@@ -43,7 +44,7 @@ const Home = (props: IHomeView) => {
         <Container>
           <Row>
             <Column>
-              <Title>VCCoctails</Title>
+              <Title>VCCocktails</Title>
               <Spacer size="sm" />
               <LightText>Search for cocktails.</LightText>
             </Column>
@@ -59,14 +60,22 @@ const Home = (props: IHomeView) => {
         </Container>
       </Background>
       <Container>
-        {results.map((results) => (
-          <Text
-            key={results.idDrink}
-            onClick={() => navigateToDetails(results.idDrink)}
-          >
-            {results.strDrink}
-          </Text>
-        ))}
+        <Grid>
+          {results.map((result) => (
+            <Item
+              key={result.idDrink}
+              onClick={() => navigateToDetails(result.idDrink)}
+            >
+              {result.strDrinkThumb && (
+                <Image
+                  src={result.strDrinkThumb}
+                  alt={result.strDrinkAlternate ?? ""}
+                />
+              )}
+              <Text>{result.strDrink}</Text>
+            </Item>
+          ))}
+        </Grid>
       </Container>
     </>
   );
