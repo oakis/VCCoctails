@@ -4,7 +4,7 @@ import { Text } from "components/Text";
 import { Title } from "components/Title";
 import { useRouter } from "next/router";
 import React, { useState, useContext } from "react";
-import { Container } from "./style";
+import { Container } from "components/Container";
 import { SearchContext } from "contexts/SearchContext";
 // import { Button } from 'components/Button';
 // import { SearchResult } from 'components/SearchResult';
